@@ -1,0 +1,2 @@
+module CampaignInfluencersHelper
+end

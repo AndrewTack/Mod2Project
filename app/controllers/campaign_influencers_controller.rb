@@ -1,0 +1,2 @@
+class CampaignInfluencersController < ApplicationController
+end
