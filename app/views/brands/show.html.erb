@@ -2,5 +2,5 @@
 <h2><%=@brand.year_founded%></h2>
 <h3><%=@brand.description%></h3>
 
- <!–– if logic to make sure noone can delete THE brand besides itself ––>
+ <!-- if logic to make sure noone can delete THE brand besides itself -->
   <%= link_to "delete", @brand, method: :delete, data: { confirm: "Are You Sure?" } %>

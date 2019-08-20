@@ -1,0 +1,60 @@
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |error|%>
+   <li><%= error %></li>
+    <% end %>
+ </ul>
+<% end %>
+
+<%= form_for @influencer do |f| %>
+<%=f.label :name%>
+<%=f.text_field :name%> <br> <br>
+<%=f.label :role%>
+<select name=influencer[:role]>  
+  <option value="Athlete">Athlete</option>
+  <option value="Agent">Agent</option>
+  <option value="Team">Team</option>
+  <option value="Event">Event</option>
+</select> <br> <br>
+<%=f.label :age%>
+<%=f.text_area :age%> <br> <br>
+<%=f.label :gender%>
+<select name=influencer[:gender]>  
+  <option value="Male">Male</option>
+  <option value="Female">Female</option> 
+  <option value="Other">Other</option> 
+</select> <br> <br>
+ <!-- <%=f.label :social_media%> -->
+ <!--<%=f.text_area :social_media%> <br> <br> -->
+<%=f.label :sport%>
+ <select name=influencer[:sport]>  
+  <option value="Baseball">Baseball</option>
+  <option value="Basketball">Basketball</option>
+  <option value="Boxing">Boxing</option>
+  <option value="Cricket">Cricket</option>
+  <option value="Crossfit">Crossfit</option>
+  <option value="Diving">Diving</option>
+  <option value="Figureskating">Figureskating</option>
+  <option value="Fishing">Fishing</option>
+  <option value="Football">Football</option>
+  <option value="Golf">Golf</option>
+  <option value="Hockey">Hockey</option>
+  <option value="Lacrosse">Lacrosse</option>
+  <option value="MMA">MMA</option>
+  <option value="Powerlifting">Powerlifting</option>
+  <option value="Swimming">Swimming</option>
+  <option value="Skiing">Skiing</option>
+  <option value="Snowboarding">Snowboarding</option>
+  <option value="Skateboarding">Skateboarding</option>
+  <option value="Snowmobiling">Snowmobiling</option>
+  <option value="Soccer">Soccer</option>
+  <option value="Tennis">Tennis</option>
+  <option value="Wrestling">Wrestling</option>
+</select> <br> <br>
+<%=f.label :location%>
+<%=f.text_area :location%> <br> <br>
+ <!-- how do we accept images from desktop / users computer too? -->
+<%=f.label "Profile Picture"%>
+<%=f.text_area :image_url%> <br> <br>
+<%=f.submit%>
+<%end%>
