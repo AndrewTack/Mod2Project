@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :brands
   resources :campaigns
-  # resources :campaign_influencers, only [:index]
+  resources :campaign_influencers
   resources :influencers
 
   root 'pages#index'
