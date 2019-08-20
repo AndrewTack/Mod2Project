@@ -1,0 +1,8 @@
+<h1><%=@influencer.name%></h1>
+<h2><%=@influencer.role%></h2>
+<h3><%=@influencer.sport%></h3>
+ <!-- add attributes and make look way better -->
+  <!-- include number of campaigns this influencer has been involved with -->
+
+ <!-- if logic to make sure noone can delete THE brand besides itself -->
+  <%= link_to "delete", @influencer, method: :delete, data: { confirm: "Are You Sure?" } %>
