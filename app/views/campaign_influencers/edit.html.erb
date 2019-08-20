@@ -1,0 +1,15 @@
+<!-- copy/past from new page -->
+
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |error|%>
+   <li><%= error %></li>
+    <% end %>
+ </ul>
+<% end %>
+
+<%= form_for @campaign_influencer do |f| %>
+<%=f.label :pitch%>
+<%=f.text_area :pitch%> <br> <br>
+<%=f.submit%>
+<%end%>
