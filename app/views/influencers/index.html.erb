@@ -15,48 +15,37 @@
 <%end%>
 
 <p>Search by Role</p>
-<%= form_tag(campaigns_path, method: "get") do %>
+<%= form_tag(influencers_path, method: "get") do %>
 <select name=influencer[:role]>
-<option value="Athlete">Athlete</option>
+ <option value="None">-Select-</option>
+ <option value="Athlete">Athlete</option>
  <option value="Agent">Agent</option>
  <option value="Team">Team</option>
-  <option value="Event">Event</option>
+ <option value="Event">Event</option>
 </select><br> <br>
-<%= submit_tag "Search" %>
-<% end %>
-
-<hr>
 
 <p>Search by Age</p>
-<%= form_tag(campaigns_path, method: "get") do %>
 <select name=influencer[:age]>
-<option value="18-21">18-21</option>
-<option value="22-25">22-25</option>
-<option value="26-29">26-29</option>
-<option value="30-34">30-34</option>
-<option value="35-100">35+< </option>
+  <option value="None">-Select-</option>
+  <option value="18-21">18-21</option>
+  <option value="22-25">22-25</option>
+  <option value="26-29">26-29</option>
+  <option value="30-34">30-34</option>
+  <option value="35-100">35+< </option>
 </select><br> <br>
-<%= submit_tag "Search" %>
-<% end %>
-
-<hr>
 
 <p>Search by Gender</p>
-<%= form_tag(campaigns_path, method: "get") do %>
 <select name=influencer[:gender]>
+ <option value="None">-Select-</option>
  <option value="Male">Male</option>
  <option value="Female">Female</option>
  <option value="Other">Other</option>
 </select><br> <br>
-<%= submit_tag "Search" %>
-<% end %>
-
-<hr>
 
 <p>Search by Sport</p>
-<%= form_tag(campaigns_path, method: "get") do %>
 <select name=influencer[:sport]>
- <option value="Baseball">Baseball</option>
+  <option value="None">-Select-</option>
+  <option value="Baseball">Baseball</option>
   <option value="Basketball">Basketball</option>
   <option value="Boxing">Boxing</option>
   <option value="Cricket">Cricket</option>
@@ -79,5 +68,15 @@
   <option value="Tennis">Tennis</option>
   <option value="Wrestling">Wrestling</option>
 </select><br> <br>
- <%= submit_tag "Search" %>
-<%end%>
+
+<p>Search by Location</p>
+<select name=influencer[:location]>
+ <option value="None">-Select-</option>
+ <option value="New York City">New York City</option>
+ <option value="Chicago">Chicaog</option>
+ <option value="California">California</option>
+</select><br> <br>
+<%= submit_tag "Search" %>
+<% end %>
+
+<hr>

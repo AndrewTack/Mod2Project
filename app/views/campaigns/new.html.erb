@@ -13,6 +13,7 @@
 <%=f.text_field :title%> <br> <br>
 <%=f.label :category%>
 <select name=campaign[:category]>
+ <option value="None">-Select-</option>
  <option value="Food_Beverage">Food_Beverage</option>
  <option value="Apparel">Apparel</option>
  <option value="Equipment">Equipment</option>
@@ -20,7 +21,8 @@
 </select><br> <br>
 <%=f.label :type_of%>
 <select name=campaign[:type_of]>
- <option value="Social Media Post">Social Media Post</option>
+<option value="None">-Select-</option>
+<option value="Social Media Post">Social Media Post</option>
  <option value="Guest Speaker">Guest Speaker</option>
  <option value="Photoshoot">Photoshoot</option>
  <option value="Event Appearance">Event Appearance</option>
@@ -33,6 +35,7 @@
 <%=f.text_area :summary%> <br> <br>
 <%=f.label :status%>
 <select name=campaign[:status]>
+ <option value="None">-Select-</option>
  <option value="Pending">Pending</option>
  <option value="Active">Active</option>
  <option value="Completed">Completed</option>

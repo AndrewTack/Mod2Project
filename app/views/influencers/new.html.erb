@@ -14,7 +14,8 @@
 <%=f.label :name%>
 <%=f.text_field :name%> <br> <br>
 <%=f.label :role%>
-<select name="influencer[role]">  
+<select name="influencer[role]"> 
+ <option value="None">-Select-</option>
   <option value="Athlete">Athlete</option>
   <option value="Agent">Agent</option>
   <option value="Team">Team</option>
@@ -24,6 +25,7 @@
 <%=f.text_area :age%> <br> <br>
 <%=f.label :gender%>
 <select name="influencer[gender]">  
+ <option value="None">-Select-</option>
   <option value="Male">Male</option>
   <option value="Female">Female</option> 
   <option value="Other">Other</option> 
@@ -32,6 +34,7 @@
  <!--<%=f.text_area :social_media%> <br> <br> -->
 <%=f.label :sport%>
  <select name="influencer[sport]">  
+  <option value="None">-Select-</option>
   <option value="Baseball">Baseball</option>
   <option value="Basketball">Basketball</option>
   <option value="Boxing">Boxing</option>
