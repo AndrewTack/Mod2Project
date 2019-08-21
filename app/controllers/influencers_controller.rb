@@ -1,5 +1,7 @@
 class InfluencersController < ApplicationController
-
+    skip_before_action :authorized, only: [:new, :create, :show]
+    before_action :find_influencer, only: [:show]
+  
     def index
         @influencers = Influencer.all
     end
@@ -8,6 +10,11 @@ class InfluencersController < ApplicationController
         @influencer = Influencer.find(params[:id])
     end
 
+    # def profile
+    #     @current_user = Influencer.find(session[:influencer_id])
+    #     render :show
+    #   end
+
     def new
         @influencer = Influencer.new
     end
@@ -15,10 +22,13 @@ class InfluencersController < ApplicationController
     def create
         @influencer = Influencer.create(influencer_params)
         if @influencer.valid?
+            flash[:notice] = "Signup Successful! Welcome, #{@influencer.name}"
+            session[:influencer_id] = @influencer.id
             redirect_to @influencer
         else 
-            flash[:errors] = @influencer.errors.full_messages
-            redirect_to new_influencer_path
+            render :new
+            # flash[:errors] = @influencer.errors.full_messages
+            # redirect_to new_influencer_path
         end 
     end
 
@@ -29,6 +39,7 @@ class InfluencersController < ApplicationController
     def update
         @influencer = Influencer.find(params[:id])
         if @influencer.update(brand_params)
+            flash[:notice] = "Successfully updated profile"
             redirect_to @influencer
         else 
             flash[:errors] = @influencer.errors.full_messages
@@ -38,6 +49,7 @@ class InfluencersController < ApplicationController
 
     def destroy
         @influencer = Influencer.find(params[:id])
+        flash[:notice] = "Deleted account for #{@influencer.name}"
         @influencer.destroy
 
         redirect_to influencers_path
@@ -45,8 +57,12 @@ class InfluencersController < ApplicationController
 
     private
 
+    def find_influencer
+        @influencer = Influencer.find(params[:id])
+    end
+
     def influencer_params
-        params.require(:influencer).permit(:name, :role, :age, :gender, :social_media, :sport, :location, :image_url)
+        params.require(:influencer).permit(:name, :role, :age, :gender, :social_media, :sport, :location, :image_url, :password_digest)
     end
 
 end
