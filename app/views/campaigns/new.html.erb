@@ -13,7 +13,7 @@
 <%=f.text_field :title%> <br> <br>
 <%=f.label :category%>
 <select name=campaign[:category]>
- <option value="Food/Beverage">Food/Beverage</option>
+ <option value="Food_Beverage">Food_Beverage</option>
  <option value="Apparel">Apparel</option>
  <option value="Equipment">Equipment</option>
  <option value="Supplements">Supplements</option>
@@ -33,8 +33,9 @@
 <%=f.text_area :summary%> <br> <br>
 <%=f.label :status%>
 <select name=campaign[:status]>
+ <option value="Pending">Pending</option>
  <option value="Active">Active</option>
- <option value="Inactive">Inactive</option>
+ <option value="Completed">Completed</option>
 </select><br> <br>
 <%=f.label :image_url%>
 <%=f.text_area :image_url%> <br> <br>

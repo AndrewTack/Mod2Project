@@ -1,6 +1,9 @@
 class CampaignsController < ApplicationController
     def index
+  
+     # if we have query params, make an array for the options of the second dropdown
         @campaigns = Campaign.all
+
     end
 
     def show

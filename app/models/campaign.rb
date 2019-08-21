@@ -7,4 +7,9 @@ class Campaign < ApplicationRecord
     validates :title, presence: true 
     validates :summary, length: { minimum:10 }
 
+    def self.seach(search)
+        where("name LIKE ?", "%#{search}%")
+        where("content LIKE ?", "%#{search}%")
+    end
+
 end
