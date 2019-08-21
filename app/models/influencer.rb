@@ -7,4 +7,6 @@ class Influencer < ApplicationRecord
     validates :age, numericality: {minimum: 18}
     validates :age, numericality: {maximum: 100}
 
+    has_secure_password
+
 end

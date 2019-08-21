@@ -4,5 +4,12 @@
  <!-- add attributes and make look way better -->
   <!-- include number of campaigns this influencer has been involved with -->
 
- <!-- if logic to make sure noone can delete THE brand besides itself -->
-  <%= link_to "delete", @influencer, method: :delete, data: { confirm: "Are You Sure?" } %>
+ <!-- if logic to make sure noone can delete THE influencer besides itself -->
+  <!-- <%= link_to "delete", @influencer, method: :delete, data: { confirm: "Are You Sure?" } %> -->
+
+ <!-- UPDATED logic to make sure noone can delete THE influencer besides itself -->
+
+  <hr>
+<% if @influencer == current_user %>
+  <%= button_to "Delete Account", @influencer, method: :delete %>
+<% end %>

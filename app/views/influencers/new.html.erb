@@ -1,3 +1,5 @@
+<h1>Sign Up</h1>
+
 <% if flash[:errors] %>
   <ul>
     <% flash[:errors].each do |error|%>
@@ -58,5 +60,13 @@
  <!-- how do we accept images from desktop / users computer too? -->
 <%=f.label "Profile Picture"%>
 <%=f.text_area :image_url%> <br> <br>
-<%=f.submit%>
+
+  <%= f.label "Username" %>
+  <%= f.text_field :name %>
+  <%= f.label "Password" %>
+  <%= f.password_field :password_digest %>
+  <%# <%= f.label :image_url %>
+  <%# <%= f.text_field :image_url %>
+  <%= f.submit %>
+
 <%end%>
