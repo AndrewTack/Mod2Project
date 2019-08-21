@@ -1,6 +1,5 @@
 <!-- figure out how to make this an awesome AND searchable table -->
 
-
 <%@influencers.each do |influencer|%>
 <h3><%=influencer.image_url%></h3>
 <h3><%=influencer.name%></h3>
@@ -13,4 +12,72 @@
 
 <hr>
 
+<%end%>
+
+<p>Search by Role</p>
+<%= form_tag(campaigns_path, method: "get") do %>
+<select name=influencer[:role]>
+<option value="Athlete">Athlete</option>
+ <option value="Agent">Agent</option>
+ <option value="Team">Team</option>
+  <option value="Event">Event</option>
+</select><br> <br>
+<%= submit_tag "Search" %>
+<% end %>
+
+<hr>
+
+<p>Search by Age</p>
+<%= form_tag(campaigns_path, method: "get") do %>
+<select name=influencer[:age]>
+<option value="18-21">18-21</option>
+<option value="22-25">22-25</option>
+<option value="26-29">26-29</option>
+<option value="30-34">30-34</option>
+<option value="35-100">35+< </option>
+</select><br> <br>
+<%= submit_tag "Search" %>
+<% end %>
+
+<hr>
+
+<p>Search by Gender</p>
+<%= form_tag(campaigns_path, method: "get") do %>
+<select name=influencer[:gender]>
+ <option value="Male">Male</option>
+ <option value="Female">Female</option>
+ <option value="Other">Other</option>
+</select><br> <br>
+<%= submit_tag "Search" %>
+<% end %>
+
+<hr>
+
+<p>Search by Sport</p>
+<%= form_tag(campaigns_path, method: "get") do %>
+<select name=influencer[:sport]>
+ <option value="Baseball">Baseball</option>
+  <option value="Basketball">Basketball</option>
+  <option value="Boxing">Boxing</option>
+  <option value="Cricket">Cricket</option>
+  <option value="Crossfit">Crossfit</option>
+  <option value="Diving">Diving</option>
+  <option value="Figureskating">Figureskating</option>
+  <option value="Fishing">Fishing</option>
+  <option value="Football">Football</option>
+  <option value="Golf">Golf</option>
+  <option value="Hockey">Hockey</option>
+  <option value="Lacrosse">Lacrosse</option>
+  <option value="MMA">MMA</option>
+  <option value="Powerlifting">Powerlifting</option>
+  <option value="Swimming">Swimming</option>
+  <option value="Skiing">Skiing</option>
+  <option value="Snowboarding">Snowboarding</option>
+  <option value="Skateboarding">Skateboarding</option>
+  <option value="Snowmobiling">Snowmobiling</option>
+  <option value="Soccer">Soccer</option>
+  <option value="Tennis">Tennis</option>
+  <option value="Wrestling">Wrestling</option>
+</select><br> <br>
+ <%= submit_tag "Search" %>
 <%end%>

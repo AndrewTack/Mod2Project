@@ -1,6 +1,14 @@
-<h1><%=@influencer.name%></h1>
+<h2><%=@influencer.image_url%></h2>
+<h1>Profile Page for <%=@influencer.name%></h1>
+<h2>Social Media Followers:<%=@influencer.social_media%></h2>
 <h2><%=@influencer.role%></h2>
 <h3><%=@influencer.sport%></h3>
+<h3><%=@influencer.age%></h3>
+<h3><%=@influencer.gender%></h3>
+<h3><%=@influencer.location%></h3>
+
+<h3><%= flash[:notice] %></h3>
+
  <!-- add attributes and make look way better -->
   <!-- include number of campaigns this influencer has been involved with -->
 

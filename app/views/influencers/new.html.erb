@@ -14,7 +14,7 @@
 <%=f.label :name%>
 <%=f.text_field :name%> <br> <br>
 <%=f.label :role%>
-<select name=influencer[:role]>  
+<select name="influencer[role]">  
   <option value="Athlete">Athlete</option>
   <option value="Agent">Agent</option>
   <option value="Team">Team</option>
@@ -23,7 +23,7 @@
 <%=f.label :age%>
 <%=f.text_area :age%> <br> <br>
 <%=f.label :gender%>
-<select name=influencer[:gender]>  
+<select name="influencer[gender]">  
   <option value="Male">Male</option>
   <option value="Female">Female</option> 
   <option value="Other">Other</option> 
@@ -31,7 +31,7 @@
  <!-- <%=f.label :social_media%> -->
  <!--<%=f.text_area :social_media%> <br> <br> -->
 <%=f.label :sport%>
- <select name=influencer[:sport]>  
+ <select name="influencer[sport]">  
   <option value="Baseball">Baseball</option>
   <option value="Basketball">Basketball</option>
   <option value="Boxing">Boxing</option>
@@ -64,7 +64,7 @@
   <%= f.label "Username" %>
   <%= f.text_field :name %>
   <%= f.label "Password" %>
-  <%= f.password_field :password_digest %>
+  <%= f.password_field :password %>
   <%# <%= f.label :image_url %>
   <%# <%= f.text_field :image_url %>
   <%= f.submit %>

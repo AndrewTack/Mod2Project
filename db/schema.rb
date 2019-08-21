@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190820191510) do
+ActiveRecord::Schema.define(version: 20190821160300) do
 
   create_table "brands", force: :cascade do |t|
     t.string "name"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20190820191510) do
     t.string "role"
     t.integer "age"
     t.string "gender"
-    t.string "social_media"
+    t.integer "social_media"
     t.string "sport"
     t.string "location"
     t.string "image_url"

@@ -1,5 +1,5 @@
 class InfluencersController < ApplicationController
-    skip_before_action :authorized, only: [:new, :create, :show]
+    skip_before_action :authorized, only: [:index, :new, :create, :show]
     before_action :find_influencer, only: [:show]
   
     def index
@@ -10,10 +10,10 @@ class InfluencersController < ApplicationController
         @influencer = Influencer.find(params[:id])
     end
 
-    # def profile
-    #     @current_user = Influencer.find(session[:influencer_id])
-    #     render :show
-    #   end
+    def profile
+        @current_user = Influencer.find(session[:influencer_id])
+        render :show
+    end
 
     def new
         @influencer = Influencer.new
@@ -38,12 +38,13 @@ class InfluencersController < ApplicationController
 
     def update
         @influencer = Influencer.find(params[:id])
-        if @influencer.update(brand_params)
+        if @influencer.update(influencer_params)
             flash[:notice] = "Successfully updated profile"
             redirect_to @influencer
         else 
-            flash[:errors] = @influencer.errors.full_messages
-            redirect_to edit_influencer_path(@influencer)
+            render :edit
+            # flash[:errors] = @influencer.errors.full_messages
+            # redirect_to edit_influencer_path(@influencer)
         end     
     end
 
@@ -62,7 +63,7 @@ class InfluencersController < ApplicationController
     end
 
     def influencer_params
-        params.require(:influencer).permit(:name, :role, :age, :gender, :social_media, :sport, :location, :image_url, :password_digest)
+        params.require(:influencer).permit(:name, :role, :age, :gender, :social_media, :sport, :location, :image_url, :password)
     end
 
 end

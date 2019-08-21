@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
   root 'pages#index'
 
-  #get '/profile', to: 'influencers#profile', as: 'profile'
-  # get '/profile/edit', to: 'users#edit', as: 'edit_profile'
+  get '/profile', to: 'influencers#profile', as: 'profile'
+  get '/profile/edit', to: 'users#edit', as: 'edit_profile'
 
   get '/login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#create'
