@@ -9,4 +9,15 @@ class Influencer < ApplicationRecord
 
     has_secure_password
 
+    def self.search(search)
+        if search 
+            influencer = Influencer.find_by(params[:role])
+            influencer = Influencer.find_by(params[:age])
+            influencer = Influencer.find_by(params[:gender])
+            influencer = Influencer.find_by(params[:sport])
+        else
+            Influencer.all
+        end 
+    end 
+
 end

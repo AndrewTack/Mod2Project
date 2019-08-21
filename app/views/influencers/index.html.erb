@@ -1,34 +1,14 @@
 <!-- figure out how to make this an awesome AND searchable table -->
 
-<%@influencers.each do |influencer|%>
-<h3><%=influencer.image_url%></h3>
-<h3><%=influencer.name%></h3>
-<h3><%=influencer.role%></h3>
-<h3><%=influencer.sport%></h3>
-<h3><%=influencer.age%></h3>
-<h3><%=influencer.gender%></h3>
-<h3><%=influencer.location%></h3>
-<h3><%=influencer.social_media%></h3>
-
-<hr>
-
-<%end%>
-
-<p>Search by Role</p>
-<%= form_tag(campaigns_path, method: "get") do %>
+<p>Search by:</p>
+<%= form_tag(influencers_path, method: "get") do %>
 <select name=influencer[:role]>
 <option value="Athlete">Athlete</option>
  <option value="Agent">Agent</option>
  <option value="Team">Team</option>
   <option value="Event">Event</option>
 </select><br> <br>
-<%= submit_tag "Search" %>
-<% end %>
 
-<hr>
-
-<p>Search by Age</p>
-<%= form_tag(campaigns_path, method: "get") do %>
 <select name=influencer[:age]>
 <option value="18-21">18-21</option>
 <option value="22-25">22-25</option>
@@ -36,25 +16,13 @@
 <option value="30-34">30-34</option>
 <option value="35-100">35+< </option>
 </select><br> <br>
-<%= submit_tag "Search" %>
-<% end %>
 
-<hr>
-
-<p>Search by Gender</p>
-<%= form_tag(campaigns_path, method: "get") do %>
 <select name=influencer[:gender]>
  <option value="Male">Male</option>
  <option value="Female">Female</option>
  <option value="Other">Other</option>
 </select><br> <br>
-<%= submit_tag "Search" %>
-<% end %>
 
-<hr>
-
-<p>Search by Sport</p>
-<%= form_tag(campaigns_path, method: "get") do %>
 <select name=influencer[:sport]>
  <option value="Baseball">Baseball</option>
   <option value="Basketball">Basketball</option>
@@ -80,4 +48,18 @@
   <option value="Wrestling">Wrestling</option>
 </select><br> <br>
  <%= submit_tag "Search" %>
+<%end%>
+
+<%@influencers.each do |influencer|%>
+<h3><%=influencer.image_url%></h3>
+<h3><%=influencer.name%></h3>
+<h3><%=influencer.role%></h3>
+<h3><%=influencer.sport%></h3>
+<h3><%=influencer.age%></h3>
+<h3><%=influencer.gender%></h3>
+<h3><%=influencer.location%></h3>
+<h3><%=influencer.social_media%></h3>
+
+<hr>
+
 <%end%>

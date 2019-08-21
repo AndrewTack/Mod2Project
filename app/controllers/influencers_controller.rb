@@ -3,7 +3,7 @@ class InfluencersController < ApplicationController
     before_action :find_influencer, only: [:show]
   
     def index
-        @influencers = Influencer.all
+        @influencers = Influencer.search(params[:search])
     end
 
     def show

@@ -22,7 +22,7 @@ end
 
 #create some Influencer data
 25.times do 
-    Influencer.create(name: Faker::Name.name, role: ["Athlete", "Agent", "Team", "Event"].sample, age: Faker::Number.between(from: 18, to: 100), gender: Faker::Gender.binary_type, social_media: Faker::Number.between(from: 500, to: 10000), sport: ["Baseball", "Basketball", "Boxing", "Cricket", "Crossfit", "Diving", "Figureskating", "Fishing", "Football", "Golf", "Hockey", "Lacrosse", "MMA", "Powerlifting", "Swimming", "Skiing", "Snowboarding", "Skateboarding", "Snowmobiling", "Soccer", "Tennis", "Wrestling"].sample, location: Faker::Nation.flag, image_url: Faker::SlackEmoji, password: Faker::Number.number(digits: 5))
+    Influencer.create(name: Faker::Name.name, role: ["Athlete", "Agent", "Team", "Event"].sample, age: Faker::Number.between(from: 18, to: 100), gender: Faker::Gender.binary_type, social_media: Faker::Number.between(from: 500, to: 10000), sport: ["Baseball", "Basketball", "Boxing", "Cricket", "Crossfit", "Diving", "Figureskating", "Fishing", "Football", "Golf", "Hockey", "Lacrosse", "MMA", "Powerlifting", "Swimming", "Skiing", "Snowboarding", "Skateboarding", "Snowmobiling", "Soccer", "Tennis", "Wrestling"].sample, location: Faker::Nation.flag, image_url: Faker::SlackEmoji, password: "pass123")
 end
 
 puts "ending seed"
