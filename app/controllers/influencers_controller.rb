@@ -3,6 +3,7 @@ class InfluencersController < ApplicationController
     before_action :find_influencer, only: [:show]
   
     def index
+<<<<<<< HEAD
         @influencers = Influencer.all
         # if #search is influencer[:role]
         #     #return all influencers by role values
@@ -18,6 +19,9 @@ class InfluencersController < ApplicationController
         #     #search is NONE
         #     #return ALL
         # end
+=======
+        @influencers = Influencer.search(params[:search])
+>>>>>>> hyoeun6
     end
 
     def show

@@ -1,5 +1,6 @@
 <!-- figure out how to make this an awesome AND searchable table -->
 
+<<<<<<< HEAD
 <%@influencers.each do |influencer|%>
 <h3><%=influencer.image_url%></h3>
 <h3><%=influencer.name%></h3>
@@ -15,6 +16,9 @@
 <%end%>
 
 <p>Search by Role</p>
+=======
+<p>Search by:</p>
+>>>>>>> hyoeun6
 <%= form_tag(influencers_path, method: "get") do %>
 <select name=influencer[:role]>
  <option value="None">-Select-</option>
@@ -24,7 +28,10 @@
  <option value="Event">Event</option>
 </select><br> <br>
 
+<<<<<<< HEAD
 <p>Search by Age</p>
+=======
+>>>>>>> hyoeun6
 <select name=influencer[:age]>
   <option value="None">-Select-</option>
   <option value="18-21">18-21</option>
@@ -34,7 +41,10 @@
   <option value="35-100">35+< </option>
 </select><br> <br>
 
+<<<<<<< HEAD
 <p>Search by Gender</p>
+=======
+>>>>>>> hyoeun6
 <select name=influencer[:gender]>
  <option value="None">-Select-</option>
  <option value="Male">Male</option>
@@ -42,7 +52,10 @@
  <option value="Other">Other</option>
 </select><br> <br>
 
+<<<<<<< HEAD
 <p>Search by Sport</p>
+=======
+>>>>>>> hyoeun6
 <select name=influencer[:sport]>
   <option value="None">-Select-</option>
   <option value="Baseball">Baseball</option>
@@ -68,6 +81,7 @@
   <option value="Tennis">Tennis</option>
   <option value="Wrestling">Wrestling</option>
 </select><br> <br>
+<<<<<<< HEAD
 
 <p>Search by Location</p>
 <select name=influencer[:location]>
@@ -80,3 +94,21 @@
 <% end %>
 
 <hr>
+=======
+ <%= submit_tag "Search" %>
+<%end%>
+
+<%@influencers.each do |influencer|%>
+<h3><%=influencer.image_url%></h3>
+<h3><%=influencer.name%></h3>
+<h3><%=influencer.role%></h3>
+<h3><%=influencer.sport%></h3>
+<h3><%=influencer.age%></h3>
+<h3><%=influencer.gender%></h3>
+<h3><%=influencer.location%></h3>
+<h3><%=influencer.social_media%></h3>
+
+<hr>
+
+<%end%>
+>>>>>>> hyoeun6
