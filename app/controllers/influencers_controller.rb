@@ -3,25 +3,7 @@ class InfluencersController < ApplicationController
     before_action :find_influencer, only: [:show]
   
     def index
-<<<<<<< HEAD
-        @influencers = Influencer.all
-        # if #search is influencer[:role]
-        #     #return all influencers by role values
-        # elsif #search is influencer[:age]
-        #     #return all influencers by age values
-        # elsif #search is influencer[:gender]
-        #     #return all influencers by gender values
-        # elsif #search is influencer[:sport]
-        #     #return all influencers by sport values
-        # elsif #search is influencer[:location]
-        #     #return all influencers by location values
-        # else 
-        #     #search is NONE
-        #     #return ALL
-        # end
-=======
         @influencers = Influencer.search(params[:search])
->>>>>>> hyoeun6
     end
 
     def show
@@ -47,6 +29,7 @@ class InfluencersController < ApplicationController
             flash[:errors] = @influencer.errors.full_messages
             redirect_to new_influencer_path
         end 
+
     end
 
     def edit

@@ -11,8 +11,8 @@ require 'faker'
 puts "beginning seed"
 
 Brand.destroy_all
-# Campaign.destroy_all
-# Campaign_Influencer.destroy_all
+Campaign.destroy_all
+CampaignInfluencer.destroy_all
 Influencer.destroy_all
 
 #create some Brand data
@@ -27,12 +27,17 @@ end
 
 #create some Campaign data
 25.times do 
-    Campaign.create(brand_id: Brand.pluck(:id).sample, budget: , summary: , category: ["Food_Beverage", "Apparel", "Equipment", "Supplements"].sample, type_of: ["Social Media Post", "Guest Speaker", "Photoshoot", "Event Appearance", "Logo Placement", "Product Endorsement"].sample, image_url: , status: , title:)
+    Campaign.create(brand_id: Brand.pluck(:id).sample, budget: Faker::Number.within(range: 100..100000), summary: Faker::Marketing.buzzwords, category: ["Food_Beverage", "Apparel", "Equipment", "Supplements"].sample, type_of: ["Social Media Post", "Guest Speaker", "Photoshoot", "Event Appearance", "Logo Placement", "Product Endorsement"].sample, 
+    image_url: ["http://www.adema.me/wp-content/uploads/2016/04/adema_gamaia_fist_sign.jpg", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d7a91c19552867.562dc572925a2.jpg", "https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/815/cached.offlinehbpl.hbpl.co.uk/news/SUC/NoMaybes1-20150714122724324.jpeg"].sample, 
+    status: ["Pending", "Active", "Completed"].sample, 
+    title: Faker::App.name)
 end
 
 #create some Campaign_Influencer data
 25.times do 
-    Campaign_Influencer.create(brand_id: Brand.pluck(:id).sample, budget: , summary: , category: , type_of: , image_url: , status: , title:)
+    CampaignInfluencer.create(campaign_id: Campaign.pluck(:id).sample, influencer_id: Influencer.pluck(:id).sample,
+    approval_status: [:approved, :pending].sample,
+    pitch: Faker::Company.catch_phrase)
 end
 
 puts "ending seed"

@@ -62,14 +62,12 @@
 <%=f.text_area :location%> <br> <br>
  <!-- how do we accept images from desktop / users computer too? -->
 <%=f.label "Profile Picture"%>
-<%=f.text_area :image_url%> <br> <br>
+<%=f.file_field :image_url %> <br> <br>
 
   <%= f.label "Username" %>
   <%= f.text_field :name %>
   <%= f.label "Password" %>
   <%= f.password_field :password %>
-  <%# <%= f.label :image_url %>
-  <%# <%= f.text_field :image_url %>
   <%= f.submit %>
 
 <%end%>
