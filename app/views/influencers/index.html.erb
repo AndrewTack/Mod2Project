@@ -55,18 +55,32 @@
 <%end%><br><br>
 
 <h2> Influencers:</h2>
-<% @influencers.each do |influencer| %>
-<h3>Name: <%=link_to influencer.name, influencer_path(influencer)%></h3>
-<h3>Role: <%=influencer.role%></h3>
-<h3>Sport: <%=influencer.sport%></h3>
-<h3>Age: <%=influencer.age%></h3>
-<h3>Gender: <%=influencer.gender%></h3>
-<h3>Location: <%=influencer.location%></h3>
-<h3>Social Media: <%=influencer.social_media%></h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Role</td>
+      <td>Sport</td>
+      <td>Age</td>
+      <td>Gender</td>
+      <td>Location</td>
+      <td>Social Media</td>
+    </tr> 
+  </thead>
+
+  <tbody>
+  <% @influencers.each do |influencer| %>
+  <tr>  
+    <td> <%=link_to influencer.name, influencer_path(influencer)%></td>
+    <td> <%=influencer.role%></td>
+    <td> <%=influencer.sport%></td>
+    <td> <%=influencer.age%></td>
+    <td> <%=influencer.gender%></td>
+    <td> <%=influencer.location%></td>
+    <td><%=influencer.social_media%></td>
+  </tr>
+  <%end%>
+  </tbody>
 </table>
-
-
-<hr>
-
-<%end%>
 </div>
