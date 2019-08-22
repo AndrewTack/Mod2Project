@@ -11,10 +11,12 @@ class Influencer < ApplicationRecord
 
     def self.search(search)
         if search 
-            influencer = Influencer.find_by(params[:role])
-            influencer = Influencer.find_by(params[:age])
-            influencer = Influencer.find_by(params[:gender])
-            influencer = Influencer.find_by(params[:sport])
+            influencers = Influencer.all
+            influencers = influencers.where(role: params[:role]) 
+            influencers = influencers.where(age: params[:age]) 
+            influencers = influencers.where(gender: params[:gender]) 
+            influencers = influencers.where(sport: params[:sport]) 
+            return influencers 
         else
             Influencer.all
         end 
