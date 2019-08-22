@@ -29,7 +29,6 @@ class InfluencersController < ApplicationController
             flash[:errors] = @influencer.errors.full_messages
             redirect_to new_influencer_path
         end 
-
     end
 
     def edit

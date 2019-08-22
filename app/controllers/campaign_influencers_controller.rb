@@ -9,11 +9,13 @@ class CampaignInfluencersController < ApplicationController
     end
 
     def new
+        # byebug
         @campaign_influencer = CampaignInfluencer.new
+        @current_campaign = params[:campaign_id]
     end
 
     def create
-        @campaign_influencer = CampaignInfluencer.create(campaign_influencer_params)
+        @campaign_influencer = CampaignInfluencer.create(campaign_id: params[:campaign_id].to_i, influencer_id: session[:influencer_id], approval_status: false, pitch: params[:campaign_influencer][:pitch])
         if @campaign_influencer.valid?
             redirect_to @campaign_influencer
         else 
@@ -41,6 +43,9 @@ class CampaignInfluencersController < ApplicationController
         @campaign_influencer.destroy
 
         redirect_to campaign_influencers_path
+    end
+
+    def update_approval_status
     end
 
     private
