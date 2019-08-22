@@ -31,12 +31,16 @@ class InfluencersController < ApplicationController
         else 
             flash[:errors] = @influencer.errors.full_messages
             redirect_to new_influencer_path
+<<<<<<< HEAD
         end   
         
         # uploaded_file = params[:influencer][:image_url]
         #     File.open(Rails.root.join('public', 'uploads', uploaded_file.original_filename), 'wb') do |file|
         #     file.write(uploaded_file.read)
         # end
+=======
+        end 
+>>>>>>> andrew9
     end
 
     def edit

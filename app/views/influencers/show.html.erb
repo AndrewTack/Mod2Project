@@ -30,4 +30,11 @@
 
  <!-- UPDATED logic to make sure noone can delete THE influencer besides itself -->
 
+<<<<<<< HEAD
   
+=======
+  <hr>
+<% if @influencer == current_user %>
+  <%= button_to "Delete Account", @influencer, method: :delete %>
+<% end %>
+>>>>>>> andrew9

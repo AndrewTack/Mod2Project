@@ -3,4 +3,13 @@
 <h3><%=@brand.description%></h3>
 
  <!-- if logic to make sure noone can delete THE brand besides itself -->
-  <%= link_to "delete", @brand, method: :delete, data: { confirm: "Are You Sure?" } %>
+  <!-- <%= link_to "delete", @brand, method: :delete, data: { confirm: "Are You Sure?" } %>  -->
+
+  <hr>
+<% if @brand == current_user %>
+  <%= link_to "Create A Campaign", new_campaign_path %>
+
+  <!-- <%= link_to "View My Campaigns" %> -->
+
+  <%= button_to "Delete Account", @brand, method: :delete %>
+<% end %>

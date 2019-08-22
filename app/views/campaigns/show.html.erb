@@ -5,7 +5,12 @@
 <h3><%=@campaign.budget%></h3>
 <h3><%=@campaign.summary%></h3>
 <h3><%=@campaign.status%></h3>
-<%= image_tag @campaign.image_url, size: "230" %><br>
 
- <!–– if logic to make sure noone can delete THE brand besides itself ––>
+ <%= image_tag @campaign.image_url, size: "230" %><br>
+
+<%= link_to "Apply to be an influencer", new_campaign_influencer_path(:campaign_id => @campaign.id) %>
+
+ <!-- if logic to make sure noone can delete THE brand besides itself -->
+
   <%= link_to "delete", @campaign, method: :delete, data: { confirm: "Are You Sure?" } %>
+

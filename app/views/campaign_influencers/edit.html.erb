@@ -8,8 +8,20 @@
  </ul>
 <% end %>
 
-<%= form_for @campaign_influencer do |f| %>
-<%=f.label :pitch%>
-<%=f.text_area :pitch%> <br> <br>
-<%=f.submit%>
-<%end%>
+
+<!-- if logic so only the influencer that created the pitch can update the pitch -->
+
+<% if @campaign_influencer.influencer_id == session[:influencer_id] %>
+<h1>Edit Your Pitch!</h1>
+  <%= form_for @campaign_influencer do |f| %>
+  <%=f.label :pitch%>
+  <%=f.text_area :pitch%> <br> <br>
+  <%= hidden_field_tag 'campaign_id', @current_campaign %>
+  <%=f.submit%>
+  <%end%>
+  <% elsif @campaign_influencer.campaign.brand_id == current_user.id %>
+  <% byebug %>
+  <h1>Do you want to work with this influencer?</h1>
+  <!-- some button to switch approval status from false to true -->
+<% end %>
+
