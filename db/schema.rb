@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20190821160300) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
   create_table "campaign_influencers", force: :cascade do |t|
