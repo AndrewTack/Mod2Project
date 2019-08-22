@@ -1,3 +1,7 @@
 <%@brands.each do |brand|%>
-<h3><%=brand.name%></h3>
+<ul>
+    <li>
+<h3><%=link_to brand.name, brand_path(brand)%></h3>
+    </li>
+</ul>
 <%end%>

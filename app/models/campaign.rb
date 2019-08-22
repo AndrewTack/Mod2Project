@@ -7,11 +7,18 @@ class Campaign < ApplicationRecord
     validates :title, presence: true 
     validates :summary, length: { minimum:10 }
 
-    #don't think this is working?
-    def self.seach(search)
-        where("name LIKE ?", "%#{search}%")
-        where("content LIKE ?", "%#{search}%")
-    end
+    def self.search(search)
+        if  search 
+            campaigns = Campaign.all
+            campaigns = campaigns.where(category: search[:":category"]) 
+            campaigns = campaigns.where(type_of: search[:":type_of"]) 
+            campaigns = campaigns.where(status: search[:":status"])
+            # byebug
+            return campaigns 
+        else 
+            Campaign.all
+        end 
+    end 
 
     def do_you_approve
         #this was what we did for CLI app. No need to prompt on a website! Imbed this in the HTML

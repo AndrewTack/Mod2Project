@@ -3,7 +3,9 @@ class InfluencersController < ApplicationController
     before_action :find_influencer, only: [:show]
   
     def index
-        @influencers = Influencer.search(params[:search])
+        # byebug
+        @influencers = Influencer.search(params[:influencer])
+        # byebug
     end
 
     def show
@@ -20,16 +22,21 @@ class InfluencersController < ApplicationController
     end
 
     def create
-        @influencer = Influencer.create(influencer_params)
-        if @influencer.valid?
+        @influencer = Influencer.new (influencer_params)
+        if @influencer.save
             flash[:notice] = "Signup Successful! Welcome, #{@influencer.name}"
             session[:influencer_id] = @influencer.id
+            
             redirect_to @influencer
         else 
             flash[:errors] = @influencer.errors.full_messages
             redirect_to new_influencer_path
-        end 
-
+        end   
+        
+        # uploaded_file = params[:influencer][:image_url]
+        #     File.open(Rails.root.join('public', 'uploads', uploaded_file.original_filename), 'wb') do |file|
+        #     file.write(uploaded_file.read)
+        # end
     end
 
     def edit

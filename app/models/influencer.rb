@@ -7,22 +7,21 @@ class Influencer < ApplicationRecord
     validates :age, numericality: {greater_than_or_equal_to: 18}
     validates :age, numericality: {less_than_or_equal_to: 100}
 
-
+    has_one_attached :image_url 
     has_secure_password
 
     def self.search(search)
-        if search 
+        if  search 
             influencers = Influencer.all
-            influencers = influencers.where(role: params[:role]) 
-            influencers = influencers.where(age: params[:age]) 
-            influencers = influencers.where(gender: params[:gender]) 
-            influencers = influencers.where(sport: params[:sport]) 
+            influencers = influencers.where(role: search[:":role"]) 
+            # influencers_age_match = influencers_role_match.where(age: search[:":age"])
+            influencers = influencers.where(gender: search[:":gender"]) 
+            influencers = influencers.where(sport: search[:":sport"])
+            # byebug
             return influencers 
-        else
+        else 
             Influencer.all
         end 
     end 
-
-    
 
 end

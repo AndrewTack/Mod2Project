@@ -1,22 +1,8 @@
 <!-- figure out how to make this an awesome AND searchable table -->
-
-<% @influencers.each do |influencer| %>
-<h3><%=influencer.image_url%></h3>
-<h3><%=influencer.name%></h3>
-<h3><%=influencer.role%></h3>
-<h3><%=influencer.sport%></h3>
-<h3><%=influencer.age%></h3>
-<h3><%=influencer.gender%></h3>
-<h3><%=influencer.location%></h3>
-<h3><%=influencer.social_media%></h3>
-
-<hr>
-
-<%end%>
-
-<p>Search by:</p>
+<div class="container">
+<h3>Search by:</h3>
 <%= form_tag(influencers_path, method: "get") do %>
-<select name=influencer[:role]>
+<select name=influencer[:role], class="form-control">
  <option value="None">-Select-</option>
  <option value="Athlete">Athlete</option>
  <option value="Agent">Agent</option>
@@ -24,23 +10,23 @@
  <option value="Event">Event</option>
 </select><br> <br>
 
-<select name=influencer[:age]>
+<%# <select name=influencer[:age], class="form-control">
   <option value="None">-Select-</option>
   <option value="18-21">18-21</option>
   <option value="22-25">22-25</option>
   <option value="26-29">26-29</option>
   <option value="30-34">30-34</option>
   <option value="35-100">35+< </option>
-</select><br> <br>
+</select><br> <br> %>
 
-<select name=influencer[:gender]>
+<select name=influencer[:gender], class="form-control">
  <option value="None">-Select-</option>
  <option value="Male">Male</option>
  <option value="Female">Female</option>
  <option value="Other">Other</option>
 </select><br> <br>
 
-<select name=influencer[:sport]>
+<select name=influencer[:sport], class="form-control">
   <option value="None">-Select-</option>
   <option value="Baseball">Baseball</option>
   <option value="Basketball">Basketball</option>
@@ -66,5 +52,21 @@
   <option value="Wrestling">Wrestling</option>
 </select><br> <br>
  <%= submit_tag "Search" %>
-<%end%>
+<%end%><br><br>
 
+<h2> Influencers:</h2>
+<% @influencers.each do |influencer| %>
+<h3>Name: <%=link_to influencer.name, influencer_path(influencer)%></h3>
+<h3>Role: <%=influencer.role%></h3>
+<h3>Sport: <%=influencer.sport%></h3>
+<h3>Age: <%=influencer.age%></h3>
+<h3>Gender: <%=influencer.gender%></h3>
+<h3>Location: <%=influencer.location%></h3>
+<h3>Social Media: <%=influencer.social_media%></h3>
+</table>
+
+
+<hr>
+
+<%end%>
+</div>

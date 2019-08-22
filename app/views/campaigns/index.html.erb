@@ -1,6 +1,5 @@
 
-
-<p>Search by Category</p>
+<p>Search by:</p>
 <%= form_tag(campaigns_path, method: "get") do %>
 <select name=campaign[:category]>
 <option value="Food_Beverage">Food_Beverage</option>
@@ -8,11 +7,7 @@
  <option value="Equipment">Equipment</option>
   <option value="Supplements">Supplements</option>
 </select><br> <br>
-<%= submit_tag "Search" %>
-<% end %>
 
-<p>Search by Budget</p>
-<%= form_tag(campaigns_path, method: "get") do %>
 <select name=campaign[:budget]>
 <option value="$100 - $500">$100 - $500</option>
 <option value="$500 - $1,0000">$500 - $1,0000</option>
@@ -20,11 +15,7 @@
  <option value="$5,000 - $1,5000">$5,000 - $1,5000</option>
   <option value="$1,5000 < ">$1,5000 < </option>
 </select><br> <br>
-<%= submit_tag "Search" %>
-<% end %>
 
-<p>Search by Type</p>
-<%= form_tag(campaigns_path, method: "get") do %>
 <select name=campaign[:type_of]>
  <option value="Social Media Post">Social Media Post</option>
  <option value="Guest Speaker">Guest Speaker</option>
@@ -33,11 +24,7 @@
  <option value="Logo Placement">Logo Placement</option>
  <option value="Product Endorsement">Product Endorsement</option>
 </select><br> <br>
-<%= submit_tag "Search" %>
-<% end %>
 
-<p>Search by Status</p>
-<%= form_tag(campaigns_path, method: "get") do %>
 <select name=campaign[:status]>
  <option value="Pending">Pending</option>
  <option value="Active">Active</option>

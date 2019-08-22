@@ -1,4 +1,5 @@
-<h1>Sign Up</h1>
+<div class="container">
+<h1>Sign Up</h1><br><br>
 
 <% if flash[:errors] %>
   <ul>
@@ -11,20 +12,28 @@
  <!-- *** ADD some sort of SELECT option for the select drop down's so user has to make a selection -->
 
 <%= form_for @influencer do |f| %>
+
+<div class="form-group">
 <%=f.label :name%>
-<%=f.text_field :name%> <br> <br>
+<%=f.text_field :name, class:"form-control" %> <br> <br>
+</div>
+
 <%=f.label :role%>
-<select name="influencer[role]"> 
+<select name="influencer[role]", class="form-control"> 
  <option value="None">-Select-</option>
   <option value="Athlete">Athlete</option>
   <option value="Agent">Agent</option>
   <option value="Team">Team</option>
   <option value="Event">Event</option>
 </select> <br> <br>
+
+<div class="form-group">
 <%=f.label :age%>
-<%=f.text_area :age%> <br> <br>
+<%=f.text_area :age, class:"form-control" %> <br> <br>
+</div>
+
 <%=f.label :gender%>
-<select name="influencer[gender]">  
+<select name="influencer[gender]", class="form-control">  
  <option value="None">-Select-</option>
   <option value="Male">Male</option>
   <option value="Female">Female</option> 
@@ -33,7 +42,7 @@
  <!-- <%=f.label :social_media%> -->
  <!--<%=f.text_area :social_media%> <br> <br> -->
 <%=f.label :sport%>
- <select name="influencer[sport]">  
+ <select name="influencer[sport]", class="form-control">  
   <option value="None">-Select-</option>
   <option value="Baseball">Baseball</option>
   <option value="Basketball">Basketball</option>
@@ -58,16 +67,25 @@
   <option value="Tennis">Tennis</option>
   <option value="Wrestling">Wrestling</option>
 </select> <br> <br>
+
+<div class="form-group">
 <%=f.label :location%>
-<%=f.text_area :location%> <br> <br>
+<%=f.text_area :location, class:"form-control"%> <br> <br>
+</div>
  <!-- how do we accept images from desktop / users computer too? -->
 <%=f.label "Profile Picture"%>
 <%=f.file_field :image_url %> <br> <br>
 
+<div class="form-group">
   <%= f.label "Username" %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, class:"form-control" %>
+</div>
+<div class="form-group">
   <%= f.label "Password" %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password, class:"form-control" %>
+</div>
   <%= f.submit %>
-
+</div>
+</div>
 <%end%>
+

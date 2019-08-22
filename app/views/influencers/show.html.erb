@@ -1,12 +1,24 @@
 
-<h1>Profile Page for <%=@influencer.name%></h1>
-<h2>Social Media Followers:<%=@influencer.social_media%></h2>
-<h2><%=@influencer.role%></h2>
-<h3><%=@influencer.sport%></h3>
-<h3><%=@influencer.age%></h3>
-<h3><%=@influencer.gender%></h3>
-<h3><%=@influencer.location%></h3>
+<h2 align="center">Profile Page for <%=@influencer.name%></h2>
+<div class="well col-xs-8 col-xs-offset-2">
 
+<% if @influencer.image_url.attached? %>
+<!-- @post.image.present? will always return true, use attached? to check presence -->
+    <br>
+    <%= image_tag @influencer.image_url %>
+  </p>
+<% end %>
+<h2>Role: <%=@influencer.role%></h2>
+<h3>Sport: <%=@influencer.sport%></h3>
+<h3>Age: <%=@influencer.age%></h3>
+<h3>Gender: <%=@influencer.gender%></h3>
+<h3>Location: <%=@influencer.location%></h3>
+<h3>Social Media Followers: <%=@influencer.social_media%></h3>
+
+
+<% if @influencer == current_user %>
+  <%= button_to "Delete Account", @influencer, method: :delete %>
+<% end %>
 
 <h3><%= flash[:notice] %></h3>
 
@@ -18,7 +30,4 @@
 
  <!-- UPDATED logic to make sure noone can delete THE influencer besides itself -->
 
-  <hr>
-<% if @influencer == current_user %>
-  <%= button_to "Delete Account", @influencer, method: :delete %>
-<% end %>
+  
