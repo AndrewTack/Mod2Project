@@ -33,7 +33,7 @@
  <%= submit_tag "Search" %>
 <%end%><br>
 
-<h2> Influencers:</h2><br>
+<h2> Campaigns:</h2><br>
 
 <%@campaigns.each do |campaign|%>
 <h3><%=link_to campaign.title, campaign_path(campaign)%></h3><br>
