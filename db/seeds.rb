@@ -17,7 +17,7 @@ Influencer.destroy_all
 
 #create some Brand data
 25.times do 
-    Brand.create(name: Faker::Company.name, year_founded: Faker::Date.between(from: 3650.days.ago, to: Date.today), description: Faker::Company.profession, password: 'pass123')
+    Brand.create(name: Faker::Company.name, year_founded: rand(1900...2019), description: Faker::Company.bs, password: 'pass123')
 end
 
 #create some Influencer data

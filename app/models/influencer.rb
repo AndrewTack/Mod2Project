@@ -13,10 +13,10 @@ class Influencer < ApplicationRecord
     def self.search(search)
         if  search 
             influencers = Influencer.all
-            influencers = influencers.where(role: search[:":role"]) 
+            influencers = influencers.where(role: search[:":role"][","]) 
             # influencers_age_match = influencers_role_match.where(age: search[:":age"])
-            influencers = influencers.where(gender: search[:":gender"]) 
-            influencers = influencers.where(sport: search[:":sport"])
+            influencers = influencers.where(gender: search[:":gender"][","]) 
+            influencers = influencers.where(sport: search[:":sport"][","])
             # byebug
             return influencers 
         else 
