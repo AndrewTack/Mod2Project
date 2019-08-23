@@ -9,10 +9,13 @@ Status: <h3><%=@campaign.status%></h3>
 
  <%= image_tag @campaign.image_url, size: "230" %><br>
 
+<%if @campaign.status != "Completed"%>
 <%= link_to "Apply to be an influencer", new_campaign_influencer_path(:campaign_id => @campaign.id) %>
+<%end%>
 
  <!-- if logic to make sure noone can delete THE brand besides itself -->
+ <!-- take this out-->
+  <!-- <%= link_to "delete", @campaign, method: :delete, data: { confirm: "Are You Sure?" } %> -->
 
-  <%= link_to "delete", @campaign, method: :delete, data: { confirm: "Are You Sure?" } %>
 </div>
 
