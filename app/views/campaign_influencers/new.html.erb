@@ -1,3 +1,4 @@
+<div class="container">
 <% if flash[:errors] %>
   <ul>
     <% flash[:errors].each do |error|%>
@@ -12,3 +13,4 @@
 <%= hidden_field_tag 'campaign_id', @current_campaign %>
 <%=f.submit%>
 <%end%>
+</div>

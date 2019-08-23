@@ -1,11 +1,11 @@
 <div class="container">
-<h1><%=@campaign.title%></h1>
-<h1><%=@campaign.brand%></h1>
-<h2><%=@campaign.category%></h2>
-<h3><%=@campaign.type_of%></h3>
-<h3><%=@campaign.budget%></h3>
-<h3><%=@campaign.summary%></h3>
-<h3><%=@campaign.status%></h3>
+Title: <h1><%=@campaign.title%></h1>
+Sponsoring Brand: <h1><%=@campaign.brand.name%></h1>
+Category: <h2><%=@campaign.category%></h2>
+Type: <h3><%=@campaign.type_of%></h3>
+Budget: <h3>$<%=@campaign.budget%></h3>
+Description: <h3><%=@campaign.summary%></h3>
+Status: <h3><%=@campaign.status%></h3>
 
  <%= image_tag @campaign.image_url, size: "230" %><br>
 

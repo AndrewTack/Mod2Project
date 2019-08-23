@@ -4,6 +4,7 @@ class CampaignsController < ApplicationController
 
     def index
      # if we have query params, make an array for the options of the second dropdown
+        # byebug
         @campaigns = Campaign.search(params[:campaign])
         
     end

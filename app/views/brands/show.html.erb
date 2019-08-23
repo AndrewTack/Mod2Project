@@ -1,9 +1,12 @@
 <div class="container">
-<h1><%=@brand.name%></h1>
-<h2><%=@brand.year_founded%></h2>
-<h3><%=@brand.description%></h3>
-</div>
-
+<h2 align="center"><%=@brand.name%></h2>
+<div class="well col-xs-8 col-xs-offset-2">
+Founded Year: <h2><%=@brand.year_founded%></h2>
+Description: <h3><%=@brand.description%></h3>
+Campaigns: <% @brand.campaigns.each do |campaign|%>
+          <h3><%= link_to campaign.title, campaign_path(campaign) %></h3>
+          <% end %>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
  <!-- if logic to make sure noone can delete THE brand besides itself -->
   <!-- <%= link_to "delete", @brand, method: :delete, data: { confirm: "Are You Sure?" } %>  -->
 

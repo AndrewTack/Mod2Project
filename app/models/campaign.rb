@@ -10,9 +10,9 @@ class Campaign < ApplicationRecord
     def self.search(search)
         if  search 
             campaigns = Campaign.all
-            campaigns = campaigns.where(category: search[:":category"]) 
-            campaigns = campaigns.where(type_of: search[:":type_of"]) 
-            campaigns = campaigns.where(status: search[:":status"])
+            campaigns = campaigns.where(category: search[:":category"][","]) 
+            campaigns = campaigns.where(type_of: search[:":type_of"][","]) 
+            campaigns = campaigns.where(status: search[:":status"][","])
             # byebug
             return campaigns 
         else 
