@@ -6,6 +6,7 @@ class Brand < ApplicationRecord
     #validates_date :year_founded, :on => :create, :on_or_before => :today
     validates :description, length: {minimum: 10}
 
-    has_secure_password
+    #     #scrapping this
+    # has_secure_password
     
 end

@@ -27,7 +27,6 @@ class InfluencersController < ApplicationController
         if @influencer.save
             flash[:notice] = "Signup Successful! Welcome, #{@influencer.name}"
             session[:influencer_id] = @influencer.id
-            
             redirect_to @influencer
         else 
             flash[:errors] = @influencer.errors.full_messages

@@ -10,7 +10,8 @@ class ApplicationController < ActionController::Base
   def current_user
     @influencer = Influencer.find_by({ id: session[:influencer_id] })
     #adding brand logic
-    @brand = Brand.find_by({ id: session[:brand_id]})
+    #scrapping all this
+    # @brand = Brand.find_by({ id: session[:brand_id]})
   end
 
   def logged_in?
