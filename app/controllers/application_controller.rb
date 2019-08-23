@@ -5,8 +5,6 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?
   before_action :authorized
 
-  before_action :authorized
-
   def current_user
     @influencer = Influencer.find_by({ id: session[:influencer_id] })
     #adding brand logic
