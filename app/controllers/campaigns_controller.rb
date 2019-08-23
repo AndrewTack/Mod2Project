@@ -1,4 +1,6 @@
 class CampaignsController < ApplicationController
+    skip_before_action :authorized, only: [:index, :new, :create, :show]
+    # before_action :find_influencer, only: [:show]
 
     def index
      # if we have query params, make an array for the options of the second dropdown

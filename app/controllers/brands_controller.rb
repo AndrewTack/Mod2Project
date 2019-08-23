@@ -1,7 +1,8 @@
 class BrandsController < ApplicationController
     #added for login/logout etc...
-    skip_before_action :authorized, only: [:index, :new, :create, :show]
-    before_action :find_brand, only: [:show]
+    #scrapping all this
+    # skip_before_action :authorized, only: [:index, :new, :create, :show]
+    # before_action :find_brand, only: [:show]
 
     def index
         @brands = Brand.all
@@ -11,10 +12,11 @@ class BrandsController < ApplicationController
         @brand = Brand.find(params[:id])
     end
 
-    def profile_b
-        @current_user = Brand.find(session[:brand_id])
-        render :show
-    end
+#scrapping all this
+    # def profile_b
+    #     @current_user = Brand.find(session[:brand_id])
+    #     render :show
+    # end
 
     def new
         @brand = Brand.new
@@ -24,7 +26,8 @@ class BrandsController < ApplicationController
         @brand = Brand.create(brand_params)
         if @brand.valid?
             flash[:notice] = "Signup Successful! Welcome, #{@brand.name}"
-            session[:brand_id] = @brand.id
+            #scrapping all this
+            # session[:brand_id] = @brand.id
             redirect_to @brand
         else 
             flash[:errors] = @brand.errors.full_messages
@@ -56,9 +59,10 @@ class BrandsController < ApplicationController
 
     private
 
-    def find_brand
-        @brand = Brand.find(params[:id])
-    end
+    #scrapping all this
+    # def find_brand
+    #     @brand = Brand.find(params[:id])
+    # end
 
     def brand_params
         params.require(:brand).permit(:name, :year_founded, :description, :password)
