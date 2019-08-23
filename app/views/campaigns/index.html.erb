@@ -8,13 +8,13 @@
   <option value="Supplements">Supplements</option>
 </select><br> <br>
 
-<select name=campaign[:budget]>
+<!-- <select name=campaign[:budget]>
 <option value="$100 - $500">$100 - $500</option>
 <option value="$500 - $1,0000">$500 - $1,0000</option>
  <option value="$1,000 - $5,000">$1,000 - $5,000</option>
  <option value="$5,000 - $1,5000">$5,000 - $1,5000</option>
   <option value="$1,5000 < ">$1,5000 < </option>
-</select><br> <br>
+</select><br> <br> -->
 
 <select name=campaign[:type_of]>
  <option value="Social Media Post">Social Media Post</option>
@@ -34,6 +34,6 @@
 <%end%>
 
 <%@campaigns.each do |campaign|%>
-<h3><%=campaign.title%></h3><br>
+<h3><%=link_to campaign.title, campaign_path(campaign)%></h3><br>
 <%end%>
 </div>
